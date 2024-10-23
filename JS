@@ -1,0 +1,27 @@
+function gerarSenha() {
+  const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const letrasMinusculas = 'abcdefghijklmnopqrstuvwxyz';
+  const numeros = '0123456789';
+  const caracteresEspeciais = '!@#$%^&*()_+[]{}|;:,.<>?';
+  
+  let caracteres = '';
+  if (document.getElementById('maiusculas').checked) caracteres += letrasMaiusculas;
+  if (document.getElementById('minusculas').checked) caracteres += letrasMinusculas;
+  if (document.getElementById('numeros').checked) caracteres += numeros;
+  if (document.getElementById('especiais').checked) caracteres += caracteresEspeciais;
+  
+  const comprimento = document.getElementById('length').value;
+  let senha = '';
+
+  if (caracteres === '') {
+    alert('Selecione pelo menos uma opção de caractere!');
+    return;
+  }
+
+  for (let i = 0; i < comprimento; i++) {
+    const randomIndex = Math.floor(Math.random() * caracteres.length);
+    senha += caracteres[randomIndex];
+  }
+
+  document.getElementById('senha').value = senha;
+}
