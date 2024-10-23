@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Senhas Complexas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Gerador de Senhas Complexas</h1>
+    
+    <input type="text" id="senha" readonly>
+
+    <div class="options">
+      <label for="length">Comprimento da Senha: <span id="lengthValue">12</span></label>
+      <input type="range" id="length" min="8" max="32" value="12" oninput="document.getElementById('lengthValue').textContent = this.value">
+      
+      <label><input type="checkbox" id="maiusculas" checked> Incluir Maiúsculas</label>
+      <label><input type="checkbox" id="minusculas" checked> Incluir Minúsculas</label>
+      <label><input type="checkbox" id="numeros" checked> Incluir Números</label>
+      <label><input type="checkbox" id="especiais"> Incluir Caracteres Especiais</label>
+    </div>
+
+    <button onclick="gerarSenha()">Gerar Senha</button>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
